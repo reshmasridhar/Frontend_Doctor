@@ -21,7 +21,7 @@ const MyAppointmentNew = () => {
     // Fetch user details from the server using the JWT token
     const token = localStorage.getItem('token');
     if (token) {
-      fetch('https://backend-doctor-mc59.onrender.com/getUserDetails', {
+      fetch('/getUserDetails', {
         headers: {
           Authorization: `Bearer ${token}`,
         },

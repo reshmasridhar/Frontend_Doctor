@@ -26,7 +26,7 @@ const SignupPage = () => {
         alert('Please fill in all fields');
       } else {
         try {
-          const response = await fetch('https://backend-doctor-mc59.onrender.com/signup', {
+          const response = await fetch('https://backend-doctor-mc59.onrender.com/PatientSignup', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
