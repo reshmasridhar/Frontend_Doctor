@@ -26,7 +26,7 @@ const SignupPage = () => {
         alert('Please fill in all fields');
       } else {
         try {
-          const response = await fetch('https://samplebackend-6fht.onrender.com/Signup', {
+          const response = await fetch('https://newback-3097.onrender.com/Signup', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
