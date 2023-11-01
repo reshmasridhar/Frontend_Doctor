@@ -2,6 +2,7 @@ import React, { useState, useEffect  } from 'react';
 import { useParams  } from 'react-router-dom';
 import AppointmentConfirmation from './AppointmentConfirmation';
 import Swal from 'sweetalert2';
+import {BASE_URL} from '../config';
 
 
 
@@ -26,7 +27,7 @@ const AppointmentForm = ({ doctor, onAppointmentSubmit }) => {
     // Fetch user details from the server using the JWT token
     const token = localStorage.getItem('token');
     if (token) {
-      fetch('https://newback-3097.onrender.com/getUserDetails', {
+      fetch(`${BASE_URL}/getUserDetails`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -52,7 +53,7 @@ const AppointmentForm = ({ doctor, onAppointmentSubmit }) => {
     };
 // Send a POST request to the backend API to save the appointment
     try {
-      const response = await fetch('https://newback-3097.onrender.com/appointments', {
+      const response = await fetch(`${BASE_URL}/appointments`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

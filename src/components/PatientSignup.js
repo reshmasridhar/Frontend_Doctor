@@ -3,6 +3,7 @@ import { Link,useNavigate } from 'react-router-dom';
 //import './SignupPage.css'; // Create a CSS file for styling
 import Header from'../components/Header';
 import Footer from'../components/Footer';
+import {BASE_URL} from '../config';
 
 const SignupPage = () => {
    
@@ -26,7 +27,7 @@ const SignupPage = () => {
         alert('Please fill in all fields');
       } else {
         try {
-          const response = await fetch('https://newback-3097.onrender.com/Signup', {
+          const response = await fetch(`${BASE_URL}/Signup`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

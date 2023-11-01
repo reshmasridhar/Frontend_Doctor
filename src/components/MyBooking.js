@@ -2,7 +2,7 @@
 import React , { useState, useEffect }from 'react';
 import './PatientPage.css';
 import { Link, useParams  } from 'react-router-dom';
-
+import {BASE_URL} from '../config';
 
 const MyBooking = () => {
   const [appointments, setAppointments] = useState([]);
@@ -11,7 +11,7 @@ const MyBooking = () => {
     // Fetch appointments for the patient
     const token = localStorage.getItem('token');
     if (token) {
-      fetch('https://newback-3097.onrender.com/bookings?email=${email}', {
+      fetch(`${BASE_URL}/bookings?email=${email}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -32,7 +32,7 @@ const MyBooking = () => {
     // Fetch user details from the server using the JWT token
     const token = localStorage.getItem('token');
     if (token) {
-      fetch('https://newback-3097.onrender.com/getUserDetails', {
+      fetch(`${BASE_URL}/getUserDetails`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

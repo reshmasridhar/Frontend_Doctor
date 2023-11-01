@@ -5,6 +5,7 @@ import {  Link,useNavigate } from 'react-router-dom';
 import './LoginPage.css';
 import Header from'../components/Header';
 import Footer from'../components/Footer';
+import {BASE_URL} from '../config';
 
 const Patientlogin = () => {
     //const [username, setUsername] = useState('');
@@ -21,7 +22,7 @@ const Patientlogin = () => {
       }
   
       try {
-        const response = await fetch('https://newback-3097.onrender.com/Patientlogin', {
+        const response = await fetch(`${BASE_URL}/Patientlogin`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

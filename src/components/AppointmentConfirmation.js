@@ -1,6 +1,7 @@
 // src/components/AppointmentConfirmation.js
 import React, { useState,useEffect }  from 'react';
 import Modal from 'react-modal';
+import {BASE_URL} from '../config';
 
 Modal.setAppElement('#root');
 
@@ -11,7 +12,7 @@ const AppointmentConfirmation = ({ isOpen, appointmentData, onConfirm, onCancel 
     // Fetch user details from the server using the JWT token
     const token = localStorage.getItem('token');
     if (token) {
-      fetch('https://newback-3097.onrender.com/getUserDetails', {
+      fetch(`${ BASE_URL }/getUserDetails`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

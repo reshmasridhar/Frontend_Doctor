@@ -8,6 +8,7 @@ import { Link, useParams  } from 'react-router-dom';
 import DoctorSearch from './DoctorSearch';
 //import PatientPage from './PatientPage';
 import Footer from'./Footer';
+import {BASE_URL} from '../config';
 
 import MyBooking from './MyBooking'; // Update the import
 
@@ -21,7 +22,7 @@ const AllDoctors = () => {
     // Fetch user details from the server using the JWT token
     const token = localStorage.getItem('token');
     if (token) {
-      fetch('https://newback-3097.onrender.com/getUserDetails', {
+      fetch(`${ BASE_URL }/getUserDetails`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

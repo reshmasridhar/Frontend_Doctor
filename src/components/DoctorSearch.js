@@ -5,6 +5,7 @@ import DoctorList from './DoctorList';
 import DoctorProfile from './DoctorProfile';
 import './DoctorSearch.css';
 import { FaCheck } from 'react-icons/fa';
+import {BASE_URL} from '../config';
 
 
 
@@ -35,7 +36,7 @@ const handleDoctorSelect = (doctor) => {
   const fetchAppointments = async (doctorName, appointmentDate) => {
     // Replace with your API endpoint for fetching appointments based on doctor and date
     try {
-      const response = await fetch(`https://newback-3097.onrender.com/appointments?doctorName=${doctorName}&appointmentDate=${appointmentDate}`);
+      const response = await fetch(`${BASE_URL}/appointments?doctorName=${doctorName}&appointmentDate=${appointmentDate}`);
       if (response.ok) {
         const data = await response.json();
         // Extract the booked time slots from the fetched data

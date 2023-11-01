@@ -6,7 +6,7 @@ import React , { useState, useEffect } from 'react';
 import './PatientPage.css';
 import { Link, useParams  } from 'react-router-dom';
 import MyAppointments from './MyAppointments';
-
+import {BASE_URL} from '../config';
 //import PatientPage from './PatientPage';
 
 import MyBooking from './MyBooking'; // Update the import
@@ -21,7 +21,7 @@ const MyAppointmentNew = () => {
     // Fetch user details from the server using the JWT token
     const token = localStorage.getItem('token');
     if (token) {
-      fetch('https://newback-3097.onrender.com/getUserDetails', {
+      fetch(`${BASE_URL}/getUserDetails`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

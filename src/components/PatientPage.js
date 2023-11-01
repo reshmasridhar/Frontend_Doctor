@@ -4,6 +4,7 @@ import './PatientPage.css';
 import { Link } from 'react-router-dom';
 //import MyBooking from './MyBooking'; // Update the import
 import Footer from'./Footer';
+import {BASE_URL} from '../config';
 
 // ... (rest of the PatientPage.js component remains the same)
 
@@ -14,7 +15,7 @@ const PatientPage = () => {
     // Fetch user details from the server using the JWT token
     const token = localStorage.getItem('token');
     if (token) {
-      fetch('https://newback-3097.onrender.com/getUserDetails', {
+      fetch(`${BASE_URL}/getUserDetails`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

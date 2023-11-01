@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './MyAppointments.css';
 import './PatientPage.css';
 import Footer from'./Footer';
-
+import {BASE_URL} from '../config';
 
 const MyAppointments = () => {
   const [appointments, setAppointments] = useState([]);
@@ -13,7 +13,7 @@ const MyAppointments = () => {
     // Fetch the patient's appointments from the server
     const token = localStorage.getItem('token');
     if (token) {
-      fetch('https://newback-3097.onrender.com/myAppointments', {
+      fetch(`${BASE_URL}/myAppointments`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -35,7 +35,7 @@ const MyAppointments = () => {
 
   const fetchUserDetails = (token) => {
     if (token) {
-      fetch('https://newback-3097.onrender.com/getUserDetails', {
+      fetch(`${BASE_URL}/getUserDetails`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
