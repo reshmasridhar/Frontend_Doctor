@@ -26,7 +26,7 @@ const AppointmentForm = ({ doctor, onAppointmentSubmit }) => {
     // Fetch user details from the server using the JWT token
     const token = localStorage.getItem('token');
     if (token) {
-      fetch('/getUserDetails', {
+      fetch('https://samplebackend-6fht.onrender.com/getUserDetails', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -52,7 +52,7 @@ const AppointmentForm = ({ doctor, onAppointmentSubmit }) => {
     };
 // Send a POST request to the backend API to save the appointment
     try {
-      const response = await fetch('/appointments', {
+      const response = await fetch('https://samplebackend-6fht.onrender.com/appointments', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

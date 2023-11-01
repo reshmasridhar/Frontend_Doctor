@@ -21,7 +21,7 @@ const AllDoctors = () => {
     // Fetch user details from the server using the JWT token
     const token = localStorage.getItem('token');
     if (token) {
-      fetch('/getUserDetails', {
+      fetch('https://samplebackend-6fht.onrender.com/getUserDetails', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
