@@ -21,7 +21,7 @@ const Patientlogin = () => {
       }
   
       try {
-        const response = await fetch('https://backend-doctor-mc59.onrender.com/Patientlogin', {
+        const response = await fetch('/Patientlogin', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
